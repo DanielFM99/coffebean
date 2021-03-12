@@ -39,6 +39,7 @@ def login():
             session['loggedin'] = True
             session['id'] = account['id']
             session['username'] = account['username']
+            session['email'] = account['email']
             # Redirect to home page
             #return 'Logged in successfully!'
             return redirect(url_for('home'))
@@ -73,19 +74,18 @@ def register():
         email = request.form['email']
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = %s', (username,))
+        cursor.execute('SELECT * FROM accounts WHERE email = %s', (email,))
         account = cursor.fetchone()
         # If account exists show error and validation checks
         if account:
             msg = 'Account already exists!'
-        #elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
-        elif not re.match(r"(^[a-zA-Z0-9_.+-{1,64}]+@[a-zA-Z0-9-\.\-{1,128}]+[a-zA-Z0-9-.]+$)", email):
+        elif not re.match(r"(^[-\w\D][^@]{0,64}@([\w-]+\.)+[\w-]+$)", email):
             msg = 'Invalid email address!'
         elif not (usernameLen >= 5 and usernameLen <= 128):
             msg = 'Invalid username!'
         elif not username or not password or not email:
             msg = 'Please fill out the form!'
-        elif not (passwordLen >= 10 and passwordLen <= 128):
+        elif not re.match(r"^(?=(?:.*[a-z]))(?=(?:.*[A-Z]){2})(?=(?:.*\d){2})(?=(?:.*[-@!$%^#&*()_+|~={}\[\]:\";`'<>?,.\/\\]){2}).{10,128}$", password):
             msg = 'Invalid password!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
