@@ -11,7 +11,7 @@ app.secret_key = 'your secret key'
 # Enter your database connection details below
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'daniel88914472'
+app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'pythonlogin'
 
 # Intialize MySQL
@@ -104,7 +104,7 @@ def home():
     # Check if user is loggedin
     if 'loggedin' in session:
         # User is loggedin show them the home page
-        return render_template('home.html', username=session['username'])
+        return render_template('home.html', username=session['username'], email=session['email'],)
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 

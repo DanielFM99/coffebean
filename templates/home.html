@@ -1,8 +1,9 @@
 {% extends 'layout.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}User Page{% endblock %}
 
 {% block content %}
-<h2>Home Page</h2>
-<p>Welcome back, {{ username }}!</p>
+<h2>User Page</h2>
+<p>Name: {{ username }}</p>
+<p>Email: {{ email }}</p>
 {% endblock %}
