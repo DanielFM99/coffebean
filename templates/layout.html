@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+	crossorigin="anonymous"></script>
+
 <head>
 	<meta charset="utf-8">
 	<title>{% block title %}{% endblock %}</title>
@@ -9,13 +15,15 @@
 </head>
 
 <body class="loggedin">
-	<nav class="navtop">
-		<div>
-			<img src="https://www.coffeebeantech.com/wp-content/uploads/2020/05/COFFEEBEAN-Logo-200px.png" alt=""
-				class="logo">
-			<a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
-			<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
-		</div>
+	<nav class="navbar navbar-light bg-light">
+		<form class="container-fluid justify-content-start">
+			<img src="https://www.coffeebeantech.com/wp-content/uploads/2020/05/COFFEEBEAN-Logo-200px.png">
+			<div class="btn-set">
+				<a class="btn btn-outline-success me-2" href="{{ url_for('home') }}" id="btn-home">Home</a>
+				<a class="btn btn-outline-success me-2" type="button" href="{{ url_for('logout') }}"
+					id="btn-logout">Logout</a>
+				<div>
+		</form>
 	</nav>
 	<div class="content">
 		{% block content %}{% endblock %}

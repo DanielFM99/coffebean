@@ -163,3 +163,29 @@ body.loggedin {
   padding: 5px;
   margin: 0 0 10px 0;
 }
+
+#btn-home {
+  border-color: #1ac1c1;
+  color: #1ac1c1;
+}
+
+#btn-logout {
+  border-color: #1ac1c1;
+  color: #1ac1c1;
+}
+
+#btn-home:hover {
+  border-color: #1ac1c1;
+  color: #1ac1c1;
+  background-color: #ffffff;
+}
+
+#btn-logout:hover {
+  border-color: #1ac1c1;
+  color: #1ac1c1;
+  background-color: #ffffff;
+}
+
+.btn-set {
+  margin-left: auto;
+}
