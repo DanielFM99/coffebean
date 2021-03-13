@@ -15,7 +15,6 @@ app.config['MYSQL_PASSWORD'] = '123456'
 app.config['MYSQL_DB'] = 'pythonlogin'
 
 # Intialize MySQL
-#aaaa
 mysql = MySQL(app)
 
 # http://localhost:5000/pythonlogin/ - this will be the login page, we need to use both GET and POST requests
@@ -70,7 +69,6 @@ def register():
         username = request.form['username']
         usernameLen = len(username)
         password = request.form['password']
-        passwordLen = len(password)
         email = request.form['email']
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
