@@ -36,6 +36,6 @@ INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES (1, 'test'
   - http://localhost:5000/coffebean/
  
 - The following username, password and email are already registered and used for testing the application:
- - Username: test
- - Password: test
- - Email: test@test.com
+  - Username: test
+  - Password: test
+  - Email: test@test.com
