@@ -9,7 +9,7 @@ app.secret_key = 'your secret key'
 
 # Database connection details
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_USER'] = 'root' # Insert your MySQL user if it's not the standard 'root'
 app.config['MYSQL_PASSWORD'] = '' # Insert your MySQL password
 app.config['MYSQL_DB'] = 'coffebean'
 
