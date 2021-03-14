@@ -32,8 +32,7 @@ INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES (1, 'test'
   - set FLASK_APP=main.py
   - flask run
  
- - In your browser, open the following link:
- 
+- In your browser, open the following link:
   - http://localhost:5000/coffebean/
  
  The following username, password and email are already registered and used for testing the application:
