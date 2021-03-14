@@ -28,6 +28,7 @@ INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES (1, 'test'
 
 - Run MySQL server
 - In main.py, on line 13 (app.config['MYSQL_PASSWORD'] = ''), insert your MySQL password
+- In main.py, on line 12 (app.config['MYSQL_USER'] = 'root'), insert your MySQL user if it's not the standard 'root'
 - At the destination folder (...\coffebean), run the following commands on your Command Prompt:
   - set FLASK_APP=main.py
   - flask run
